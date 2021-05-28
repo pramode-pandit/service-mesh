@@ -67,9 +67,10 @@ linkerd -n emojivoto check --proxy
 
 #### Step 7: Watch it run
 
+```
 linkerd -n emojivoto viz stat deploy
 linkerd -n emojivoto viz top deploy
 linkerd -n emojivoto viz tap deploy/web
-
+```
     
 
