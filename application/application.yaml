@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: register
+  name: register
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: register
+  template:
+    metadata:
+      labels:
+        app: register
+    spec:
+      containers:
+      - image: register
+        name: register
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: register
+  name: register
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080
+  selector:
+    app: register
