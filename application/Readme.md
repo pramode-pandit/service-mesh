@@ -7,10 +7,15 @@ kind load docker-image register
 // kubectl expose pod register --target-port:8080
 
 kubectl apply -f application.yaml
+
 kubectl apply -f gateway.yaml
 
 kubectl get pods 
 
 kubectl -n istio-system port-forward svc/istio-ingressgateway  80:80
 
-access as > http://myapp.servicemesh.io/register
+Add a fake domain entry in /etc/hosts
+
+`localhost myapp.servicemesh.io`
+
+Access the app > http://myapp.servicemesh.io/
