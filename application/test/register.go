@@ -45,7 +45,7 @@
                 // fmt.Println(info["name"])
                 mobile := fmt.Sprint(info["mobile"]) 
 
-                ioutil.WriteFile("data/"+mobile+".json", reqBody, os.ModePerm)
+                ioutil.WriteFile("mobile+".json", reqBody, os.ModePerm)
                 fmt.Fprintf(w, "registered !!!")
 
 	        default:
