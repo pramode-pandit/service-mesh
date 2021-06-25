@@ -7,10 +7,10 @@
 
 ```
 #Windows
-kind create cluster --name vault --image kindest/node:v1.17.0@sha256:9512edae126da271b66b990b6fff768fbb7cd786c7d39e86bdf55906352fdf62
+kind create cluster --name sevice-mesh --image kindest/node:v1.17.0@sha256:9512edae126da271b66b990b6fff768fbb7cd786c7d39e86bdf55906352fdf62
 
 #Linux
-kind create cluster --name vault --kubeconfig ~/.kube/kind-vault --image kindest/node:v1.17.0@sha256:9512edae126da271b66b990b6fff768fbb7cd786c7d39e86bdf55906352fdf62
+kind create cluster --name service-mesh --kubeconfig ~/.kube/kind-vault --image kindest/node:v1.17.0@sha256:9512edae126da271b66b990b6fff768fbb7cd786c7d39e86bdf55906352fdf62
 ```
 
 #### Step:2 Install
