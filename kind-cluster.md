@@ -1,19 +1,19 @@
-####1. Create a Kubernetes Cluster
+#### 1. create a kubernetes cluster
 
 Create a Kubernetes cluster consisting of the master node and some worker nodes. 
 
 ```
-kind create cluster --name cassandra-kub-cluster --config kind-config.yaml
+kind create cluster --name istio-cluster --config kind-config.yaml
 ```
 
-verify the Kubernetes cluster.
+#### 2.verify the kubernetes cluster.
 
 ```
 kind get clusters
 ```
 
-connect kubectl to our new cassandra kubernetes cluster.
+#### 3.connect kubectl to new cluster
 
 ```
-kubectl cluster-info --context kind-cassandra-kub-cluster
+kubectl cluster-info --context kind-istio-cluster
 ```
