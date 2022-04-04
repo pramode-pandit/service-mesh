@@ -21,6 +21,9 @@ kind create cluster --name service-mesh --kubeconfig ~/.kube/kind-vault --image 
     
     Windows
     https://github.com/istio/istio/releases/download/1.10.0/istio-1.10.0-win.zip
+
+    Linux
+    https://github.com/istio/istio/releases/download/1.10.0/istio-1.10.0-linux-amd64.tar.gz
   
   - Add the istioctl client to your path (Linux or macOS or Windows):
   
@@ -41,14 +44,21 @@ kind create cluster --name service-mesh --kubeconfig ~/.kube/kind-vault --image 
   
     `istioctl x precheck`
 
-  - `istioctl install` will install default profile or use profile of your choice `istioctl install --set profile=demo -y`
+  - Istio install with istioctl cli
 
-  - `kubectl get all -n istio-system`
+    - `istioctl install` will install default profile or use profile of your choice `istioctl install --set profile=demo -y`
 
-  - `kubectl get svc -n istio-system`
+    - `kubectl get all -n istio-system`
+
+    - `kubectl get svc -n istio-system`
   
-  - `kubectl label namespace default istio-injection=enabled` Add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy our application
+  - Add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy our application
+  
+    - `kubectl label namespace default istio-injection=enabled` 
 
+  - Unistall istio
+  
+    - `istioctl x uninstall --purge` 
 
 #### Step:3 Deploy the sample application
 
